@@ -81,3 +81,17 @@ lexer! {
     r#"[nN][oO][tT]"# => Token::Not;
     r#"[tT][rR][uU][eE]"# => Token::True;
 }
+
+pub struct Lexer {
+    original: &'a str,
+    remaining: &'a str,
+}
+
+impl<'a> Lexer<'a> {
+    pub fn new(s: &'a str) -> Self<'a> {
+        Self {
+            original: s,
+            remaining: s,
+        }
+    }
+}
