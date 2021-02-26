@@ -3,7 +3,7 @@
 Classifies substrings according to the role and communicaties the classification to the parser.
 
 
-STRING Input -> Lexer Token(<Class, String>) -> Parser
+STRING Input -> Lexer -> Token(<Class, String>) -> Parser
 
 ## Tokenization
 
@@ -28,3 +28,18 @@ set of words special to the language
 Whitespace:
 
 Non empty blanks
+
+## Implementation
+
+LookAhead complicates lexical analysis but is always needed. We should attempt to bound to some constant
+
+## Example:
+
+Classes:
+
+- Whitespace
+- Keywords
+- Variables (Identifier)
+- Integers
+
+\tif (i == j) \n\t\tz=0;\n\tesle\n\t\t\tz=1;
